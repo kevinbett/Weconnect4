@@ -1,14 +1,14 @@
 import React from 'react';
 import Navigation from '../Navigation/index';
-import LandingBody from '../LandingBody/index';
+import LoginForm from '../LoginForm';
 
-const LandingPage = () => (
+const LoginPage = () => (
 
    <div>
        <Navigation />
-       <LandingBody />
+       < LoginForm/>
       
    </div>
 );
 
-export default LandingPage;
+export default LoginPage;
