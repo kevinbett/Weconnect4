@@ -10,7 +10,7 @@ This is a front-end based that consumes an API made with Python/Flask.
 
 ## Important Links
 
-* [Heroku](https://weconnect4-heroku.herokuapp.com)
+* [Heroku Api](https://weconnect4-heroku.herokuapp.com)
 * [Github](https://github.com/kevinbett/Weconnect4.git)
 
 ## Installation
