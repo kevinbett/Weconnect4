@@ -1,12 +1,12 @@
 import React from 'react';
 import Navigation from '../Navigation/index';
-import RegistrationForm from '../RegistrationForm/RegisterForm';
+import RegisterForm from '../RegistrationForm/RegisterForm';
 
 const RegistrationPage = () => (
 
    <div>
        <Navigation />
-       <RegistrationForm />
+       <RegisterForm />
       
    </div>
 );

@@ -12,22 +12,26 @@ class RegisterForm extends React.Component {
     const name = event.target.username.value;
     const email = event.target.emailid.value;
     const password = event.target.password.value;
-
     const apiData = await fetch('https://weconnect4-heroku.herokuapp.com/register', {
           method: "POST",
-          // headers: {'Content-Type': 'application/json'},
+          headers: {'Accept': 'application/json','Content-Type': 'application/json'},
           body: JSON.stringify({
             "name": name,
             "email": email,
             "password": password
 
           })
-        });
-    const res = await apiData
-    console.log(res)
-    this.setState({message: res.message})
+    });
 
-  }
+      const res = await apiData.json();
+      console.log(res)
+      
+      if (res.message === "User has been registered successfully") {
+        window.localStorage.setItem("register_message", res.message)
+        window.location.assign('/login')
+      };
+      this.setState({message: res.message, error: res.error});
+    }
 
   render() {
     return (

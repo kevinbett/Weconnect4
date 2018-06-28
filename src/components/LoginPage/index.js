@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from '../Navigation/index';
-import LoginForm from '../LoginForm';
+import LoginForm from '../LoginForm/LoginForm'
 
 const LoginPage = () => (
 
