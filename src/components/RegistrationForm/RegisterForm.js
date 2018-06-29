@@ -27,7 +27,7 @@ class RegisterForm extends React.Component {
       console.log(res)
       
       if (res.message === "User has been registered successfully") {
-        window.localStorage.setItem("register_message", res.message)
+        window.localStorage.setItem("rMessage", res.message)
         window.location.assign('/login')
       };
       this.setState({message: res.message, error: res.error});
@@ -37,9 +37,9 @@ class RegisterForm extends React.Component {
     return (
     <div id="main-registration-container">
      <div id="register">
-     <div className="errorMsg">{this.state.message}</div>
         <h3>User Registration</h3>
         <form onSubmit= {this.handleUserRegister} >
+        <p className="errorMsg">{this.state.message}</p>
         <label>Name</label>
         <input type="text" name="username"  />
         <label>Email ID:</label>
