@@ -4,6 +4,7 @@ import LandingPage from './components/LandingPage/index.js';
 import RegisterBusinessPage from './components/RegisterBusinessPage/RegisterBusinessPage.js';
 import RegistrationPage from './components/RegistrationPage/index.js';
 import LoginPage from './components/LoginPage/index.js';
+import BusinessPage from './components/BusinessPage/index.js';
 
 
 const routes = () => {
@@ -13,6 +14,7 @@ const routes = () => {
             <Route exact path='/register' component={ RegistrationPage }/>
             <Route exact path='/login' component={ LoginPage }/>
             <Route exact path='/registerbusiness' component={ RegisterBusinessPage }/>
+            <Route exact path='/viewbusiness' component = { BusinessPage }/>
         </div>
     )
 }

@@ -17,7 +17,7 @@ const Navigation = () => (
               <Link className="nav-link" to="/registerbusiness">Register Business <span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">View Businesses</Link>
+              <Link className="nav-link" to="/viewbusiness">View Businesses</Link>
             </li>
     
           </ul>

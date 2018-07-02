@@ -23,12 +23,14 @@ class LoginForm extends React.Component {
   });
 
   const res = await apiData.json();
-  console.log('3swdefrgthyju',res)
+  console.log(res)
   
-  if (res.message === "You are now logged in as kevin bett") {
+  if (res.auth_token) {
+    window.localStorage.setItem("authToken", res.auth_token)
+    window.location.assign('/viewbusiness')
+  } else {
     window.localStorage.setItem("rMessage", res.message)
-    window.location.assign('/')
-  };
+  }
   this.setState({message: res.message, error: res.error});
 }
 

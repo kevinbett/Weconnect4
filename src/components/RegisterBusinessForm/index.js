@@ -3,106 +3,37 @@ import './style.css';
 
 
 class RegisterBusinessForm extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        
-        fields: {},
-        errors: {},
-        name: {},
-        type:{},
-        category:{},
-        locaton:{}
-      }
+  state = {
+    message: undefined
+  }
 
-      this.handleChange = this.handleChange.bind(this);
-      this.submituserRegisterBusinessForm = this.submituserRegisterBusinessForm.bind(this);
+  handleBusinessRegistration = async (event) => {
+    event.preventDefault();
+    let auth_token = 'Bearer ' + window.localStorage.getItem('authToken')
+    const name = event.target.name.value;
+    const type = event.target.type.value;
+    const category = event.target.category.value;
+    const location = event.target.location.value;
+    const apiData = await fetch('https://weconnect4-heroku.herokuapp.com/api/v1/businesses/', {
+          method: "POST",
+          headers: {'Accept': 'application/json','Content-Type': 'application/json', 'Authorization': auth_token},
+          body: JSON.stringify({
+            "name": name,
+            "type": type,
+            "category": category,
+            "location":location
 
-    };
+          })
+    });
 
-    handleChange(e) {
-      let fields = this.state.fields;
-      fields[e.target.name] = e.target.value;
-      this.setState({
-        fields
-      });
-
-    }
-
-    submituserRegisterBusinessForm(e) {
-      e.preventDefault();
-      if (this.validateForm()) {
-          let fields = {};
-          fields["name"] = "";
-          fields["type"] = "";
-          fields["category"] = "";
-          fields["location"] = "";
-          this.setState({fields:fields});
-          alert("Form submitted");
-      }
-
-    }
-
-    validateForm() {
-
-      let fields = this.state.fields;
-      let errors = {};
-      let formIsValid = true;
-
-      if (!fields["name"]) {
-        formIsValid = false;
-        errors["name"] = "*Please enter your Business Name.";
-      }
-
-      if (typeof fields["name"] !== "undefined") {
-        if (!fields["name"].match(/^[a-zA-Z ]*$/)) {
-          formIsValid = false;
-          errors["name"] = "*Please enter alphabet characters only.";
-        }
-      }
-
-      if (!fields["type"]) {
-        formIsValid = false;
-        errors["type"] = "*Please enter the type of your business.";
-      }
-
-      if (typeof fields["type"] !== "undefined") {
-        if (!fields["type"].match(/^[a-zA-Z ]*$/)) {
-          formIsValid = false;
-          errors["type"] = "*Please enter alphabet characters only.";
-        }
-      }
-
-      if (!fields["category"]) {
-        formIsValid = false;
-        errors["category"] = "*What is your Business category?.";
-      }
-
-      if (typeof fields["category"] !== "undefined") {
-        if (!fields["category"].match(/^[a-zA-Z ]*$/)) {
-          formIsValid = false;
-          errors["category"] = "*Please enter alphabet characters only.";
-        }
-      }
-
-      if (!fields["location"]) {
-        formIsValid = false;
-        errors["location"] = "*Please enter the location of your business.";
-      }
-
-      if (typeof fields["location"] !== "undefined") {
-        if (!fields["location"].match(/^[a-zA-Z ]*$/)) {
-          formIsValid = false;
-          errors["location"] = "*Please enter alphabet characters only.";
-        }
-      }
-
-      this.setState({
-        errors: errors
-      });
-      return formIsValid;
-
-
+      const res = await apiData.json();
+      console.log(res)
+      
+      if (res.message === "Business has been registered successfully") {
+        window.localStorage.setItem("rMessage", res.message)
+        window.location.assign('/viewbusiness')
+      };
+      this.setState({message: res.message, error: res.error});
     }
 
   render() {
@@ -110,20 +41,18 @@ class RegisterBusinessForm extends React.Component {
     <div id="main-registration-container">
      <div id="register">
         <h3>Business Registration</h3>
-        <form method="post"  name="userRegistrationForm"  onSubmit= {this.submituserRegisterBusinessForm} >
+        <form onSubmit= {this.handleBusinessRegistration} >
+        <p className="errorMsg">{this.state.message}</p>
         <label>Name</label>
-        <input type="text" name="username" value={this.state.fields.name} onChange={this.handleChange} />
-        <div className="errorMsg">{this.state.errors.name}</div>
+        <input type="text" name="name"  />
         <label>Type:</label>
-        <input type="text" name="emailid" value={this.state.fields.type} onChange={this.handleChange}  />
-        <div className="errorMsg">{this.state.errors.type}</div>
-        <label>Category</label>
-        <input type="password" name="password" value={this.state.fields.category} onChange={this.handleChange} />
-        <div className="errorMsg">{this.state.errors.category}</div>
+        <input type="text" name="type" />
+        <label>category</label>
+        <input type="text" name="category" />
         <label>Location</label>
-        <input type="password" name="password" value={this.state.fields.location} onChange={this.handleChange} />
-        <div className="errorMsg">{this.state.errors.location}</div>
-        <input type="submit" className="button"  value="Register"/>
+        <input type="text" name="location" />
+
+        <input type="submit" className="button"  value="Register Business"/>
         </form>
     </div>
 </div>
