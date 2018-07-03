@@ -3,3 +3,10 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+.card-deck{
+  width: 18rem;
+  padding: 2%;
+
+}

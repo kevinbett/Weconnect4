@@ -54,8 +54,8 @@ class RenderBusiness extends Component {
         const data = this.state.businesses;
         const listBiz=data.map(this.DisplayBusiness)
         return (
-            <div className="Business">
-            <div className="container row">
+            <div className="container">
+            <div className="row">
                 {listBiz}
                 </div>
                 </div>
