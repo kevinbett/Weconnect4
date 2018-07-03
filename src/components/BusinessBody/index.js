@@ -12,16 +12,19 @@ class RenderBusiness extends Component {
 
     DisplayBusiness = (item) =>{
 
-        return <div className="card">
-          <p className="card-header">Business name {item.name}</p>
-          <div className="card-body">
-            <p className="card-text">Category {item.category}</p>
-            <p className="card-text">Type {item.type}</p>
-            <p className="card-text">Location {item.location}</p>
-            <button className="btn btn-primary btn-sm btn-block">Edit</button>
-            
-          </div>
-          </div>
+            return (
+            <div className="card-deck">
+                <div className="card">
+                <p className="card-header">{item.name}</p>
+                <div className="card-body">
+                <p className="card-text">Category {item.category}</p>
+                <p className="card-text">Type {item.type}</p>
+                <p className="card-text">Location {item.location}</p>
+                <button className="btn btn-primary btn-sm btn-block">Edit</button>
+                
+            </div>
+            </div>
+          </div>)
     }
     componentDidMount() { 
         axios.get('https://weconnect4-heroku.herokuapp.com/api/v1/businesses/' )
@@ -51,8 +54,10 @@ class RenderBusiness extends Component {
         const data = this.state.businesses;
         const listBiz=data.map(this.DisplayBusiness)
         return (
-            <div className="row">
+            <div className="Business">
+            <div className="container row">
                 {listBiz}
+                </div>
                 </div>
         )
     }
