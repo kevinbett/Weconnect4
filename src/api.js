@@ -19,10 +19,14 @@ const api = {
         .then(res => res.data)
         .then(data => {
             console.log(data)
+        
             window.location.replace('/viewbusiness')
-        })
+        }),
+        edit : (id, item) => instance.put(`businesses/${id}`, item)
+        .then(res => res.data)
         
     }
+    
 }
 
 export default api;
