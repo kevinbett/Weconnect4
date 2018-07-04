@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './style.css';
 
 
@@ -40,7 +41,7 @@ class LoginForm extends React.Component {
      <div id="register">
         <h3>User Login</h3>
         <form onSubmit= {this.handleUserLogin} >
-        <p className="errorMsg">{window.localStorage.getItem("rMessage")}</p>
+        <p className="errorMsg">{window.localStorage.getItem("")}</p>
         <label>Email ID:</label>
         <input type="text" name="emailid" />
         <label>Password</label>
@@ -48,6 +49,7 @@ class LoginForm extends React.Component {
 
         <input type="submit" className="button"  value="Login"/>
         </form>
+        <Link className="pass-reset" to="/resetpassword">Forgot password?..</Link>
         
     </div>
 </div>

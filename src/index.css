@@ -10,3 +10,13 @@ body {
   padding: 2%;
 
 }
+
+.card-deck2{
+  width: 50rem;
+  padding: 2%;
+
+}
+
+.card-text{
+  font-weight: 500;
+}

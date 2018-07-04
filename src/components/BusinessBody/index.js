@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 class RenderBusiness extends Component { 
@@ -17,10 +18,11 @@ class RenderBusiness extends Component {
                 <div className="card">
                 <p className="card-header">{item.name}</p>
                 <div className="card-body">
-                <p className="card-text">Category {item.category}</p>
-                <p className="card-text">Type {item.type}</p>
-                <p className="card-text">Location {item.location}</p>
-                <button className="btn btn-primary btn-sm btn-block">Edit</button>
+                <p className="card-text">Category: {item.category}</p>
+                <p className="card-text">Type: {item.type}</p>
+                <p className="card-text">Location: {item.location}</p>
+                {/* <button className="btn btn-primary btn-sm btn-block">See More</button> */}
+                <Link to={`/profile/${item.id}`}><button className="btn btn-primary btn-sm btn-block" >See More</button></Link>
                 
             </div>
             </div>
