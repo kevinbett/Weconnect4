@@ -20,3 +20,7 @@ body {
 .card-text{
   font-weight: 500;
 }
+
+.btn-space{
+  margin-right: 15px;
+}

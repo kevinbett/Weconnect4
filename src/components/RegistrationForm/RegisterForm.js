@@ -7,6 +7,7 @@ class RegisterForm extends React.Component {
     message: undefined
   }
 
+  // Fucntion to handle registration
   handleUserRegister = async (event) => {
     event.preventDefault();
     const name = event.target.username.value;
@@ -28,6 +29,7 @@ class RegisterForm extends React.Component {
       
       if (res.message === "User has been registered successfully") {
         window.localStorage.setItem("rMessage", res.message)
+        // Redirects to login page
         window.location.assign('/login')
       };
       this.setState({message: res.message, error: res.error});

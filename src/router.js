@@ -9,6 +9,8 @@ import ResetPasswordPage from './components/ResetPasswordPage';
 import NewPasswordPage from './components/NewPasswordPage/index.js';
 import BusinessProfilePage from './components/BusinessProfilePage/index.js';
 import EditBusinessForm from './components/EditBusinessBody/index.js';
+import AddReviewForm from './components/AddReviewForm/index.js';
+import LogoutPage from './components/LogoutPage/index.js';
 
 
 const routes = () => {
@@ -23,6 +25,8 @@ const routes = () => {
             <Route exact path= '/newpassword' component = { NewPasswordPage } />
             <Route exact path= '/profile/:id' component = { BusinessProfilePage } />
             <Route exact path= '/editbusiness' component = { EditBusinessForm} />
+            <Route exact path= '/addreview' component= { AddReviewForm } />
+            <Route exact path= '/logout' component= { LogoutPage } />
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import api  from '../../api';
 import './style.css';
 import swal from 'sweetalert';
+import Navigation from '../Navigation';
 
 export const validate = (data) => {
   const errors = {};
@@ -32,7 +33,7 @@ class EditBusinessForm extends React.Component {
       window.location.assign('/viewbusiness');
     }
     const data = this.props.location.query.business;
-    console.log("Bett",this.props)
+
 
     this.setState({
       data: {
@@ -56,9 +57,9 @@ class EditBusinessForm extends React.Component {
     this.setState({ errors });
     if (Object.keys(errors).length === 0) {
       this.setState({ loading: true });
-      console.log('yeeee', this.state.data.id)
+      console.log(this.state.data.id)
       api.business.edit(this.state.data.id, this.state.data).then(() => {
-      this.props.history.push('/viewbusinesses');
+      this.props.history.push('/viewbusiness');
         
       })
         .catch(err => {
@@ -71,6 +72,8 @@ class EditBusinessForm extends React.Component {
   
   render() {
     return (
+      <div>
+        <Navigation/>
     <div id="main-registration-container">
      <div id="register">
         <h3>Edit Business</h3>
@@ -88,6 +91,7 @@ class EditBusinessForm extends React.Component {
         <input type="submit" className="button"  value="Edit Business"/>
         </form>
     </div>
+</div>
 </div>
 
       );

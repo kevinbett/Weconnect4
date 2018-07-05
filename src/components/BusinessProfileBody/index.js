@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import api  from '../../api';
-import { Item } from 'semantic-ui-react';
+// import { Item } from 'semantic-ui-react';
  
 class BusinessProfile extends Component { 
     constructor(props) { 
@@ -15,8 +15,17 @@ class BusinessProfile extends Component {
         };
     }
 
-    DisplayBusiness = (item,review) =>{
+    onDelete (item) {
+        return () => (api.business.delete(item.id)
+                        .then(res => {console.log (res.message)})
+                        .catch(err => {console.log(err)}))
+                        .then(window.location.replace('/viewbusiness'))
+    }
 
+    DisplayBusiness = (item, reviews) => {
+            const reviewItems = reviews.map((review, index) => (
+                <p key={index} className="card-text">{ review.feedback }</p>
+            ));
             return (
             <div className="card-deck2">
                 <div className="card">
@@ -25,11 +34,12 @@ class BusinessProfile extends Component {
                 <p className="card-text">Category :{item.category}</p>
                 <p className="card-text">Type :{item.type}</p>
                 <p className="card-text">Location :{item.location}</p>
-                <p className="card-text">Reviews :{review}</p>
-                {console.log('WDAEFSDGF', Item)}
-                <Link className="btn btn-primary float-right btn-sm" to ={{ pathname: "/editbusiness", query: { business: item } }} >Edit</Link>
-                <button className="btn btn-danger float-right btn-sm" onClick={()=>api.business.delete(item.id)}>Delete</button>
-                <button className="btn btn-primary float-right btn-sm">Add Review</button>
+                <h2> Reviews </h2>
+                { reviewItems }
+                <Link className="btn btn-space btn-primary float-right btn-sm" to ={{ pathname: "/editbusiness", query: { business: item } }} >Edit</Link>
+                <button className="btn btn-space btn-danger float-right btn-sm" onClick={ this.onDelete(item) }>Delete</button>
+                {/* <Link to={`/profile/${item.id}`}><button className="btn btn-primary btn-sm btn-block" >See More</button></Link> */}
+                <Link className="btn btn-space btn-primary float-right btn-sm" to ={{ pathname: "/addreview", query: { review: item}}} > Add Review</Link>
                 {/* <button className="btn btn-primary btn-sm btn-block" to="/">Edit</button> */}
                 
             </div>  
@@ -60,22 +70,20 @@ class BusinessProfile extends Component {
         axios.get(`https://weconnect4-heroku.herokuapp.com/api/v1/businesses/${this.props.match.params.id}/reviews` )
         .then(response => {
 
-            let b = Object.assign([],response.data.reviews[0]);
-            console.log(b)
-            const NewReview = { 
-                    feedback: b.feedback
+            const reviews = response.data.reviews.map((review) => (
+                { 
+                    feedback: review.feedback
                 }
-
-            const NewState = Object.assign(this.state, {reviews:NewReview})
+            ));
+            const NewState = Object.assign(this.state, {reviews: reviews})
             this.setState(NewState)
-            console.log(this.state)
-            })
+        });
 
         
     }
     render (){ 
-        const Reviews=this.state.reviews.feedback
-        const Biz=(this.DisplayBusiness(this.state.business,Reviews))
+        const Reviews=this.state.reviews
+        const Biz=(this.DisplayBusiness(this.state.business, Reviews))
             return (
                 <div className="container">
                 <div className="row">

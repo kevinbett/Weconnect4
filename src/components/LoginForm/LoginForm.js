@@ -35,13 +35,17 @@ class LoginForm extends React.Component {
   this.setState({message: res.message, error: res.error});
 }
 
+  componentWillUnmount () {
+    window.localStorage.removeItem('rMessage')
+  }
+
   render() {
     return (
     <div id="main-registration-container">
      <div id="register">
         <h3>User Login</h3>
         <form onSubmit= {this.handleUserLogin} >
-        <p className="errorMsg">{window.localStorage.getItem("")}</p>
+        <p className="errorMsg">{window.localStorage.getItem("rMessage")}</p>
         <label>Email ID:</label>
         <input type="text" name="emailid" />
         <label>Password</label>

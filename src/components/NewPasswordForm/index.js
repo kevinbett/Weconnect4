@@ -28,7 +28,7 @@ class NewPasswordForm extends React.Component {
         window.localStorage.setItem("rMessage", res.message)
         window.location.assign('/login')
       };
-      this.setState({message: res.message, error: res.error});
+      this.setState({message: res.message.message, error: res.error});
     }
 
   render() {

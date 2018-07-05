@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import swal from 'sweetalert';
 
 
 class RegisterBusinessForm extends React.Component {
@@ -24,25 +25,38 @@ class RegisterBusinessForm extends React.Component {
             "location":location
 
           })
-    });
-
+    }).catch(err => { 
+      swal({title:err.response.data.message})
+          this.setState({ errors: err.response, loading: false });
+    })
+ 
       const res = await apiData.json();
       console.log(res)
+      swal({title:res.message[0]})
+
+
       
+
       if (res.message === "Business has been registered successfully") {
-        window.localStorage.setItem("rMessage", res.message)
+        window.localStorage.setItem("rMessage", res.message.message)
         window.location.assign('/viewbusiness')
+        
       };
-      this.setState({message: res.message, error: res.error});
+      
+      this.setState({message: res.message.message, error: res.message});
+      
     }
 
   render() {
+    let message = this.state.message;
+    
+    // console.log(message)
     return (
     <div id="main-registration-container">
      <div id="register">
         <h3>Business Registration</h3>
         <form onSubmit= {this.handleBusinessRegistration} >
-        <p className="errorMsg">{this.state.message}</p>
+        <p className="errorMsg">{ message }</p>     
         <label>Name</label>
         <input type="text" name="name"  />
         <label>Type:</label>

@@ -15,14 +15,12 @@ export const instance = axios.create({
 
 const api = {
     business : {
-        delete : (id) => instance.delete(`businesses/${id}`)
-        .then(res => res.data)
-        .then(data => {
-            console.log(data)
-        
-            window.location.replace('/viewbusiness')
-        }),
+        delete : (id) => instance.delete(`businesses/${id}`),
+        // .then(window.location.replace('/viewbusiness')),
+
         edit : (id, item) => instance.put(`businesses/${id}`, item)
+        .then(res => res.data),
+        review : (id, review) => instance.post(`businesses/${id}/reviews`, review)
         .then(res => res.data)
         
     }

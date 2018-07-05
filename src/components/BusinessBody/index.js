@@ -21,7 +21,6 @@ class RenderBusiness extends Component {
                 <p className="card-text">Category: {item.category}</p>
                 <p className="card-text">Type: {item.type}</p>
                 <p className="card-text">Location: {item.location}</p>
-                {/* <button className="btn btn-primary btn-sm btn-block">See More</button> */}
                 <Link to={`/profile/${item.id}`}><button className="btn btn-primary btn-sm btn-block" >See More</button></Link>
                 
             </div>
