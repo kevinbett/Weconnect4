@@ -23,8 +23,17 @@ const api = {
         review : (id, review) => instance.post(`businesses/${id}/reviews`, review)
         .then(res => res.data)
         
-    }
+    },
+    logged_in : logged_in()
     
+}
+
+function logged_in() {
+  if (localStorage.getItem('authToken')) {
+    return true
+  } else {
+    return false
+  }
 }
 
 export default api;

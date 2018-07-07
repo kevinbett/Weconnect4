@@ -28,8 +28,6 @@ body {
 .nav-right{ 
   float: right !important
 }
-
-navbar-nav{ 
-  width: 100% !important;
-  margin: 0;
+.reg{
+  float: left;
 }

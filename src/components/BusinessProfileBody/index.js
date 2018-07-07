@@ -24,7 +24,12 @@ class BusinessProfile extends Component {
 
     DisplayBusiness = (item, reviews) => {
             const reviewItems = reviews.map((review, index) => (
+                <div>
+                    <h5 className="card-text">
+                        {review.username}
+                    </h5>
                 <p key={index} className="card-text">{ review.feedback }</p>
+                </div>
             ));
             return (
             <div className="card-deck2">
@@ -36,8 +41,12 @@ class BusinessProfile extends Component {
                 <p className="card-text">Location :{item.location}</p>
                 <h2> Reviews </h2>
                 { reviewItems }
-                <Link className="btn btn-space btn-primary float-right btn-sm" to ={{ pathname: "/editbusiness", query: { business: item } }} >Edit</Link>
-                <button className="btn btn-space btn-danger float-right btn-sm" onClick={ this.onDelete(item) }>Delete</button>
+                {api.logged_in ? (
+                <span>
+                    <Link className="btn btn-space btn-primary float-right btn-sm" to ={{ pathname: "/editbusiness", query: { business: item } }} >Edit</Link>
+                    <button className="btn btn-space btn-danger float-right btn-sm" onClick={ this.onDelete(item) }>Delete</button>
+                </span>
+                ) : <div></div>}
                 {/* <Link to={`/profile/${item.id}`}><button className="btn btn-primary btn-sm btn-block" >See More</button></Link> */}
                 <Link className="btn btn-space btn-primary float-right btn-sm" to ={{ pathname: "/addreview", query: { review: item}}} > Add Review</Link>
                 {/* <button className="btn btn-primary btn-sm btn-block" to="/">Edit</button> */}
@@ -72,7 +81,8 @@ class BusinessProfile extends Component {
 
             const reviews = response.data.reviews.map((review) => (
                 { 
-                    feedback: review.feedback
+                    feedback: review.feedback,
+                    username: review.username
                 }
             ));
             const NewState = Object.assign(this.state, {reviews: reviews})
