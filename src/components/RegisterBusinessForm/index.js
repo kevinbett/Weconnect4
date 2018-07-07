@@ -32,7 +32,7 @@ class RegisterBusinessForm extends React.Component {
  
       const res = await apiData.json();
       console.log(res)
-      swal({title:res.message[0]})
+      swal({title:res.message})
 
 
       
