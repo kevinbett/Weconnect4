@@ -59,7 +59,7 @@ class AddReviewForm extends React.Component {
         swal('review added succesfully', 'success')
       })
         .catch(err => {
-          swal({title:err.response.data.message})
+          swal({title:err.response.data.message.message})
           this.setState({ errors: err.response, loading: false });
         });
     }
