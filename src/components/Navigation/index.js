@@ -19,16 +19,12 @@ const Navigation = () => (
               <Link className="nav-link" to="/viewbusiness">View Businesses</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/logout">LogOut</Link>
+              <Link className="nav-link nav-right" to="/Search">Search</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Search">Search</Link>
+              <Link className="nav-link nav-right" to="/logout">LogOut</Link>
             </li>
           </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-2" type="" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success my-2 my-sm-0" type="">Search</button>
-          </form>
           
         </div>
       </div>

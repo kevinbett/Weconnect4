@@ -24,3 +24,12 @@ body {
 .btn-space{
   margin-right: 15px;
 }
+
+.nav-right{ 
+  float: right !important
+}
+
+navbar-nav{ 
+  width: 100% !important;
+  margin: 0;
+}

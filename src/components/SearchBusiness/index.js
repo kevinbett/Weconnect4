@@ -57,7 +57,7 @@ class Search extends Component {
                         <form class="form">
                             <div class="input">
                                 <div class="">
-                                    <input type="text" class="form-control" ref={input => this.category = input} onChange={this.handleInputOnChange} id="inlineFormInputGroup" placeholder="Category..." />
+                                    <input type="text" class="form-control" ref={input => this.search = input} onChange={this.handleInputOnChange} id="inlineFormInputGroup" placeholder="Search..." />
                                 </div>
                             </div>
                         </form>
@@ -75,7 +75,7 @@ class Search extends Component {
                         <form class="form">
                             <div class="input">
                                 <div class="">
-                                    <input type="text" class="form-control" ref={input => this.search = input} onChange={this.handleInputOnChange} id="inlineFormInputGroup" placeholder="Search..." />
+                                    <input type="text" class="form-control" ref={input => this.category = input} onChange={this.handleInputOnChange} id="inlineFormInputGroup" placeholder="category..." />
                                 </div>
                             </div>
                         </form>
