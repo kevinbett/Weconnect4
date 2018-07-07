@@ -11,6 +11,7 @@ import BusinessProfilePage from './components/BusinessProfilePage/index.js';
 import EditBusinessForm from './components/EditBusinessBody/index.js';
 import AddReviewForm from './components/AddReviewForm/index.js';
 import LogoutPage from './components/LogoutPage/index.js';
+import SearchBusiness from './components/SearchBusinessPage/index.js';
 
 
 const routes = () => {
@@ -27,6 +28,7 @@ const routes = () => {
             <Route exact path= '/editbusiness' component = { EditBusinessForm} />
             <Route exact path= '/addreview' component= { AddReviewForm } />
             <Route exact path= '/logout' component= { LogoutPage } />
+            <Route exact path= '/search' component= { SearchBusiness } />
         </div>
     )
 }

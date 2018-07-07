@@ -19,7 +19,7 @@ class BusinessProfile extends Component {
         return () => (api.business.delete(item.id)
                         .then(res => {console.log (res.message)})
                         .catch(err => {console.log(err)}))
-                        .then(window.location.replace('/viewbusiness'))
+                        // .then(window.location.replace('/viewbusiness'))
     }
 
     DisplayBusiness = (item, reviews) => {

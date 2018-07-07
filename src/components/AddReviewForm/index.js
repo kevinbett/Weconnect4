@@ -75,7 +75,7 @@ class AddReviewForm extends React.Component {
         <h3>Enter your Review</h3>
         <form onSubmit={this.onSubmit}>
         <p className="errorMsg">{this.state.message}</p>
-        <label>Name</label>
+        <label>Review</label>
         <input type="text"  onChange={this.onChange} value={this.state.data.feedback} name="feedback"  />
         <label>Type:</label>
 
