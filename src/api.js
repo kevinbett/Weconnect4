@@ -24,7 +24,8 @@ const api = {
         .then(res => res.data)
         
     },
-    logged_in : logged_in()
+    logged_in : logged_in(),
+    is_logged_in_user : (user_id) => is_logged_in_user(user_id)
     
 }
 
@@ -36,4 +37,7 @@ function logged_in() {
   }
 }
 
+function is_logged_in_user(user_id) {
+  return (localStorage.getItem('user_id'))== user_id 
+}
 export default api;

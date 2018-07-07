@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import api  from '../../api';
-// import { Item } from 'semantic-ui-react';
  
 class BusinessProfile extends Component { 
     constructor(props) { 
@@ -19,7 +18,7 @@ class BusinessProfile extends Component {
         return () => (api.business.delete(item.id)
                         .then(res => {console.log (res.message)})
                         .catch(err => {console.log(err)}))
-                        // .then(window.location.replace('/viewbusiness'))
+                        .then(window.location.replace('/viewbusiness'))
     }
 
     DisplayBusiness = (item, reviews) => {
@@ -41,15 +40,14 @@ class BusinessProfile extends Component {
                 <p className="card-text">Location :{item.location}</p>
                 <h2> Reviews </h2>
                 { reviewItems }
-                {api.logged_in ? (
+                {api.is_logged_in_user(item.user_id) ? (
                 <span>
                     <Link className="btn btn-space btn-primary float-right btn-sm" to ={{ pathname: "/editbusiness", query: { business: item } }} >Edit</Link>
                     <button className="btn btn-space btn-danger float-right btn-sm" onClick={ this.onDelete(item) }>Delete</button>
                 </span>
-                ) : <div></div>}
-                {/* <Link to={`/profile/${item.id}`}><button className="btn btn-primary btn-sm btn-block" >See More</button></Link> */}
-                <Link className="btn btn-space btn-primary float-right btn-sm" to ={{ pathname: "/addreview", query: { review: item}}} > Add Review</Link>
-                {/* <button className="btn btn-primary btn-sm btn-block" to="/">Edit</button> */}
+                ) : (
+                    <Link className="btn btn-space btn-primary float-right btn-sm" to ={{ pathname: "/addreview", query: { review: item}}} > Add Review</Link>
+                )}
                 
             </div>  
             </div>
@@ -69,7 +67,8 @@ class BusinessProfile extends Component {
                     category: b.category,
                     id: b.id,
                     location:b.location,
-                    type: b.type
+                    type: b.type,
+                    user_id:b.user_id
                 }
 
             const NewState = Object.assign(this.state, { business:NewBusiness} )

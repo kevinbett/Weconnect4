@@ -28,6 +28,7 @@ class LoginForm extends React.Component {
   
   if (res.auth_token) {
     window.localStorage.setItem("authToken", res.auth_token)
+    window.localStorage.setItem("user_id", res.user_id)
     window.location.assign('/viewbusiness')
   } else {
     window.localStorage.setItem("rMessage", res.message)
