@@ -32,7 +32,6 @@ class AddReviewForm extends React.Component {
 
 
     const data = this.props.location.query;
-    console.log("hgkhkgggfhjjmhvjbnn", data.review.id)
 
     this.setState({
         data: {
