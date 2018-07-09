@@ -19,7 +19,9 @@ const SearchResults = (props) => {
   </div>
 
   ))
-  return <ul>{businesses}</ul>
+
+  return <div className="row"> <ul>{businesses}</ul></div>
+
 }
 
 export default SearchResults

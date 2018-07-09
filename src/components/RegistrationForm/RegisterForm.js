@@ -28,7 +28,7 @@ class RegisterForm extends React.Component {
       console.log(res)
       
       if (res.message === "User has been registered successfully") {
-        window.localStorage.setItem("rMessage", res.message)
+        window.localStorage.setItem("sMessage", res.message)
         // Redirects to login page
         window.location.assign('/login')
       };

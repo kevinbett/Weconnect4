@@ -52,9 +52,8 @@ class AddReviewForm extends React.Component {
     this.setState({ errors });
     if (Object.keys(errors).length === 0) {
       this.setState({ loading: true });
-      console.log("Bett", this.state.data)
       api.business.review(this.state.data.id, this.state.data).then(() => {
-      this.props.history.push('/viewbusiness');
+      this.props.history.push(`/profile/${this.state.data.id}`);
         swal('review added succesfully', 'success')
       })
         .catch(err => {

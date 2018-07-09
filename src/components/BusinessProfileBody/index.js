@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import api  from '../../api';
+import swal from 'sweetalert';
  
 class BusinessProfile extends Component { 
     constructor(props) { 
@@ -15,35 +16,45 @@ class BusinessProfile extends Component {
     }
 
     onDelete (item) {
-        return () => (api.business.delete(item.id)
-                        .then(res => {console.log (res.message)})
-                        .catch(err => {console.log(err)}))
-                        .then(window.location.replace('/viewbusiness'))
+        return () => (api.business.delete(item)
+                        .then(res => {
+                            console.log("Response test",res)
+                            swal(res.data.message)
+                            setTimeout(() => {
+                                window.location.assign('/viewbusiness')
+                            }, 3000)
+                        })
+
+                        .catch(err => {swal(err.message)}))
+                        
     }
 
     DisplayBusiness = (item, reviews) => {
             const reviewItems = reviews.map((review, index) => (
                 <div>
-                    <h5 className="card-text">
+                    <h5 className="badge badge-secondary" >
                         {review.username}
                     </h5>
-                <p key={index} className="card-text">{ review.feedback }</p>
+                    <div className="">
+                <p key={index} className="card-text">{ review.feedback }</p><hr />
+                </div>
                 </div>
             ));
             return (
             <div className="card-deck2">
+                {console.log("kevinbett8888",item.id)}
                 <div className="card">
                 <p className="card-header">{item.name}</p>
                 <div className="card-body">
-                <p className="card-text">Category :{item.category}</p>
+                <p className="card-text" >Category :{item.category}</p>
                 <p className="card-text">Type :{item.type}</p>
                 <p className="card-text">Location :{item.location}</p>
-                <h2> Reviews </h2>
+                <h2> <span className="badge badge-dark">Reviews</span> </h2>
                 { reviewItems }
                 {api.is_logged_in_user(item.user_id) ? (
                 <span>
                     <Link className="btn btn-space btn-primary float-right btn-sm" to ={{ pathname: "/editbusiness", query: { business: item } }} >Edit</Link>
-                    <button className="btn btn-space btn-danger float-right btn-sm" onClick={ this.onDelete(item) }>Delete</button>
+                    <button className="btn btn-space btn-danger float-right btn-sm" onClick={ this.onDelete(item.id) }>Delete</button>
                 </span>
                 ) : (
                     <Link className="btn btn-space btn-primary float-right btn-sm" to ={{ pathname: "/addreview", query: { review: item}}} > Add Review</Link>

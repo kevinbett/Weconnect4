@@ -82,7 +82,7 @@ class Search extends Component {
                     </div>
 
                 </div>
-                <div className="">
+                <div className="row">
                     <SearchResults className="row" results={this.state.results} />
                 </div>
             </div>

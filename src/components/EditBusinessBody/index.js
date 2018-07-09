@@ -59,7 +59,7 @@ class EditBusinessForm extends React.Component {
       this.setState({ loading: true });
       console.log(this.state.data.id)
       api.business.edit(this.state.data.id, this.state.data).then(() => {
-      this.props.history.push('/viewbusiness');
+      this.props.history.push(`/profile/${this.state.data.id}`);
         
       })
         .catch(err => {

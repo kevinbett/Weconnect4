@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
 }
 
   componentWillUnmount () {
-    window.localStorage.removeItem('rMessage')
+    window.localStorage.clear()
   }
 
   render() {
@@ -46,7 +46,8 @@ class LoginForm extends React.Component {
      <div id="register">
         <h3>User Login</h3>
         <form onSubmit= {this.handleUserLogin} >
-        <p className="errorMsg">{window.localStorage.getItem("rMessage")}</p>
+        { window.localStorage.getItem("rMessage") && <p className="errorMsg">{window.localStorage.getItem("rMessage")}</p>}
+        { !window.localStorage.getItem("rMessage") && window.localStorage.getItem("sMessage") && <p className="sucessMsg">{window.localStorage.getItem("sMessage")}</p>}
         <label>Email ID:</label>
         <input type="text" name="emailid" />
         <label>Password</label>

@@ -39,11 +39,14 @@ class RegisterBusinessForm extends React.Component {
 
       if (res.message === "Business has been registered successfully") {
         window.localStorage.setItem("rMessage", res.message.message)
-        window.location.assign('/viewbusiness')
         
       };
       
-      this.setState({message: res.message.message, error: res.message});
+      this.setState({message: res.message.message, error: res.message}, () => {
+        setTimeout(() =>{
+          window.location.assign('/viewbusiness')
+        }, 3000)
+      });
       
     }
 
