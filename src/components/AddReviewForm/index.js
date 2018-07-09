@@ -59,6 +59,7 @@ class AddReviewForm extends React.Component {
         .catch(err => {
           swal({title:err.response.data.message})
           this.setState({ errors: err.response, loading: false });
+          this.props.history.push(`/profile/${this.state.data.id}`)
         });
     }
   };
