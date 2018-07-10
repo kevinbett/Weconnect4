@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import "./index.css";
 
 const Home = () => (
-    <div class="jumbotron">
+    <div className="jumbotron">
       <h1 class="display-4">Welcome to WeConnect!</h1>
       <p class="lead">Your business needs are now one click away...</p>
       <hr class="my-4"></hr>
