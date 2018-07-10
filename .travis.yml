@@ -4,10 +4,3 @@ node_js:
 
 script:
   - npm test -- --coverage # Include coverage when running tests
-  
-deploy:
-  skip_cleanup: true
-  github_token: $github_token
-  local_dir: build
-  on:
-    branch: feature
