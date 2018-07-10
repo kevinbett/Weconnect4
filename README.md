@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/github/kevinbett/Weconnect4/maintainability"><img src="https://api.codeclimate.com/v1/badges/0c93b4f39867509906d7/maintainability" /></a>
+
 ## WeConnectReact 
 
 WeConnect provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.
