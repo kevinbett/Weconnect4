@@ -19,8 +19,11 @@ const SearchResults = (props) => {
 
   ))
 
-  return <div className="row"> <ul>{businesses}</ul></div>
-
+  return (
+    <div className="container">
+   <div className="row"> {businesses}</div>
+   </div>
+  )
 }
 
 export default SearchResults
