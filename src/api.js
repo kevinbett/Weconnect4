@@ -29,6 +29,16 @@ const api = {
     
 }
 
+export const weConnectLogout = (auth_token) => {
+  return fetch("https://weconnect4-heroku.herokuapp.com/logout", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': auth_token
+      }
+    });
+}
+
 function logged_in() {
   if (localStorage.getItem('authToken')) {
     return true
@@ -40,4 +50,9 @@ function logged_in() {
 function is_logged_in_user(user_id) {
   return (localStorage.getItem('user_id'))== user_id 
 }
+
+
+
+
+
 export default api;
