@@ -6,6 +6,15 @@
     "npm": "5.6.0",
     "node": "8.11.3"
   },
+
+  "jest": { 
+    "collectCoverageFrom":[
+      "src/**/*.{js}",
+      "!src/registerServiceWorker.js",
+      "!src/apiServices/*"
+    ]
+  },
+
   "dependencies": {
     "@material-ui/core": "^1.2.3",
     "axios": "^0.18.0",
