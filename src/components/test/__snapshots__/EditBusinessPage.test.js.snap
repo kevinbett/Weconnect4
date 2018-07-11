@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit Business page renders Edit Business page 1`] = `
+<div>
+  <Navigation />
+  <EditBusinessForm />
+</div>
+`;

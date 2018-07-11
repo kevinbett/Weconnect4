@@ -11,7 +11,8 @@
     "collectCoverageFrom":[
       "src/**/*.{js}",
       "!src/registerServiceWorker.js",
-      "!src/apiServices/*"
+      "!src/apiServices/*",
+      "!src/index.js"
     ]
   },
 

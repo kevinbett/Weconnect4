@@ -1,13 +1,13 @@
 import React from 'react';
 import Navigation from '../Navigation/index';
-import EditBusinessForm from '../EditBusinessForm';
+import EditBusinessBody from '../EditBusinessBody';
 
 
 const EditBusinessPage = () => (
 
    <div>
        <Navigation />
-       <EditBusinessForm />
+       <EditBusinessBody />
       
    </div>
 );

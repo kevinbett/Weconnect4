@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Business Profile page renders Business Profile page 1`] = `
+<div>
+  <Navigation />
+  <withRouter(BusinessProfile) />
+</div>
+`;

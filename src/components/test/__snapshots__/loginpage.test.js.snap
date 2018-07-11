@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page renders Login page 1`] = `
+<div>
+  <Navigation />
+  <LoginForm />
+</div>
+`;
