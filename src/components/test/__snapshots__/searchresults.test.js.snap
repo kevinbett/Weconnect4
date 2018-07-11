@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search results page  search results page renders 1`] = `
+<div
+  className="row"
+>
+   
+  <ul>
+    <div
+      className="card-deck row"
+    >
+      <div
+        className="card"
+        key="3"
+      >
+        <div
+          className="card-header bg-transparent"
+        >
+          android
+        </div>
+        <div
+          className="card-body"
+        >
+          <p
+            className="card-text"
+          >
+            Category 
+            tech
+          </p>
+          <p
+            className="card-text"
+          >
+            Description 
+            tech
+          </p>
+          <p
+            className="card-text"
+          >
+            Location 
+            trm
+          </p>
+        </div>
+        <div
+          className="card-footer"
+        >
+          <Link
+            className="btn btn-primary btn-sm float-right"
+            replace={false}
+            to="profile/3"
+          >
+            See more
+          </Link>
+        </div>
+      </div>
+    </div>
+  </ul>
+</div>
+`;
