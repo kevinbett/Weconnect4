@@ -2,10 +2,12 @@
 
 exports[`search results page  search results page renders 1`] = `
 <div
-  className="row"
+  className="container"
 >
-   
-  <ul>
+  <div
+    className="row"
+  >
+     
     <div
       className="card-deck row"
       key="3"
@@ -53,6 +55,6 @@ exports[`search results page  search results page renders 1`] = `
         </div>
       </div>
     </div>
-  </ul>
+  </div>
 </div>
 `;
