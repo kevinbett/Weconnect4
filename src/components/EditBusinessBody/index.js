@@ -33,7 +33,6 @@ class EditBusinessForm extends React.Component {
       window.location.assign('/viewbusiness');
 
     }
-    console.log ("Location props is ====> ",this.props.location)
     const data = this.props.location.query.business;
 
 

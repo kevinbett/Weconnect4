@@ -29,8 +29,6 @@ class AddReviewForm extends React.Component {
     if (!this.props) {
       window.location.assign('/viewbusiness');
     }
-
-
     const data = this.props.location.query;
 
     this.setState({
