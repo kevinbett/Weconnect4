@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import api  from '../../api';
+import api  from '../../apiServices/api';
 import swal from 'sweetalert';
  
 class BusinessProfile extends Component { 

@@ -48,7 +48,7 @@ function logged_in() {
 }
 
 function is_logged_in_user(user_id) {
-  return (localStorage.getItem('user_id'))== user_id 
+  return (localStorage.getItem('user_id')) == user_id;
 }
 
 

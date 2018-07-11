@@ -16,25 +16,24 @@ class LoginForm extends React.Component {
       const apiData = await fetch('https://weconnect4-heroku.herokuapp.com/login', {
         method: "POST",
         headers: {'Accept': 'application/json','Content-Type': 'application/json'},
-        body: JSON.stringify({
-          "email": email,
-          "password": password
+          body: JSON.stringify({
+            "email": email,
+            "password": password
+          })
+        });
 
-        })
-  });
-
-  const res = await apiData.json();
-  console.log(res)
-  
-  if (res.auth_token) {
-    window.localStorage.setItem("authToken", res.auth_token)
-    window.localStorage.setItem("user_id", res.user_id)
-    window.location.assign('/viewbusiness')
-  } else {
-    window.localStorage.setItem("rMessage", res.message)
-  }
-  this.setState({message: res.message, error: res.error});
-}
+        const res = await apiData.json();
+        console.log(res)
+        
+        if (res.auth_token) {
+          window.localStorage.setItem("authToken", res.auth_token)
+          window.localStorage.setItem("user_id", res.user_id)
+          window.location.assign('/viewbusiness')
+        } else {
+          window.localStorage.setItem("rMessage", res.message)
+        }
+        this.setState({message: res.message, error: res.error});
+    }
 
   componentWillUnmount () {
     window.localStorage.clear()

@@ -1,5 +1,5 @@
 import React from 'react';
-import api  from '../../api';
+import api  from '../../apiServices/api';
 import './style.css';
 import swal from 'sweetalert';
 import Navigation from '../Navigation';

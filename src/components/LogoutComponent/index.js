@@ -1,5 +1,5 @@
 import React from "react";
-import { weConnectLogout } from "../../api";
+import { weConnectLogout } from "../../apiServices/api";
 
 class Logout extends React.Component {
 

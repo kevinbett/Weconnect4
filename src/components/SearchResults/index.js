@@ -2,10 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SearchResults = (props) => {
-    console.log("bett", props)
   const businesses = props.results.map(business => (
-    <div className="card-deck row">
-    <div className="card" key={business.id}>
+    <div className="card-deck row" key={business.id}>
+    <div className="card">
       <div className="card-header bg-transparent">{business.name}</div>
       <div className="card-body">
         <p className="card-text">Category {business.category}</p>

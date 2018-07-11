@@ -8,10 +8,10 @@ exports[`search results page  search results page renders 1`] = `
   <ul>
     <div
       className="card-deck row"
+      key="3"
     >
       <div
         className="card"
-        key="3"
       >
         <div
           className="card-header bg-transparent"
