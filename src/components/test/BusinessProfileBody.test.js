@@ -1,8 +1,10 @@
-import BusinessProfile from '../BusinessProfileBody'
+import BusinessProfile from '../BusinessProfileBody/index';
+import { MemoryRouter } from 'react-router-dom';
 import { shallow } from "enzyme"
 
 describe('Business profile body',() => { 
     it ('Business profile body renders', () => { 
-        expect(shallow(<BusinessProfile/>)).toMatchSnapshot()
+        const wrapper = shallow(<BusinessProfile/>);
+        expect(wrapper).toMatchSnapshot();
     });
 } )

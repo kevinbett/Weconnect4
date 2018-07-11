@@ -5,7 +5,7 @@ import axios from 'axios';
 import api  from '../../apiServices/api';
 import swal from 'sweetalert';
  
-class BusinessProfile extends Component { 
+export class BusinessProfile extends Component { 
     constructor(props) { 
         super(props);
 
@@ -65,6 +65,7 @@ class BusinessProfile extends Component {
           </div>)
     }
     componentDidMount() { 
+        console.log(this.props.match)
   
         axios.get(`https://weconnect4-heroku.herokuapp.com/api/v1/businesses/${this.props.match.params.id}` )
         
