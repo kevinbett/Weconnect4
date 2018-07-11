@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logout component Logout componet renders 1`] = `
+<div>
+  <div
+    class="loader"
+    id="loader-2"
+  />
+</div>
+`;
+
+exports[`Logout page Logout page renders 1`] = `
+<div>
+  <Navigation />
+  <Home />
+</div>
+`;

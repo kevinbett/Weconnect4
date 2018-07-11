@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logout page Logout page renders 1`] = `
+<div>
+  <Navigation />
+  <Home />
+</div>
+`;
+
+exports[`New password page New password page renders 1`] = `
+<div>
+  <Navigation />
+  <NewPasswordForm />
+</div>
+`;
