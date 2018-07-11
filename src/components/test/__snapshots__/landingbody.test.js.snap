@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`landig body renders the lading body 1`] = `
+<div
+  className="jumbotron"
+>
+  <h1
+    class="display-4"
+  >
+    Welcome to WeConnect!
+  </h1>
+  <p
+    class="lead"
+  >
+    Your business needs are now one click away...
+  </p>
+  <hr
+    class="my-4"
+  />
+  <p
+    class="lead"
+  >
+    <Link
+      class="btn btn-primary btn-lg"
+      replace={false}
+      role="button"
+      to="/register"
+    >
+      SignUp
+    </Link>
+             
+    <Link
+      class="btn btn-primary btn-lg"
+      replace={false}
+      role="button"
+      to="/login"
+    >
+        Login  
+    </Link>
+  </p>
+</div>
+`;

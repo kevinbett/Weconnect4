@@ -4,6 +4,6 @@ import { Divider } from "../../../node_modules/semantic-ui-react";
 
 describe('landig body',() => { 
     it ('renders the lading body', () => { 
-        expect(shallow(<Home/>).find("div.jumbotron").exists()).toBe(true);
-    })
+        expect(shallow(<Home/>)).toMatchSnapshot()
+    });
 } )

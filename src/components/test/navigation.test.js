@@ -4,6 +4,6 @@ import { Divider } from "../../../node_modules/semantic-ui-react";
 
 describe('Navigation bar',() => { 
     it ('renders navigation bar components', () => { 
-        expect(shallow(<Navigation/>).find("Link.navbar-brand").exists()).toBe(true);
-    })
+        expect(shallow(<Navigation/>)).toMatchSnapshot()
+    });
 } )

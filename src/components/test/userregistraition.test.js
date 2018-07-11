@@ -3,6 +3,6 @@ import { shallow } from "enzyme"
 
 describe('registration page renders',() => { 
     it ('populates the signup form', () => { 
-        expect(shallow(<RegisterForm/>).find("form").exists()).toBe(true);
-    })
+        expect(shallow(<RegisterForm/>)).toMatchSnapshot()
+    });
 } )

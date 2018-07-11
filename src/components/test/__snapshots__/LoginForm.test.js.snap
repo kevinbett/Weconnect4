@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login page renders populates the the login form 1`] = `
+<div
+  id="main-registration-container"
+>
+  <div
+    id="register"
+  >
+    <h3>
+      User Login
+    </h3>
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Email ID:
+      </label>
+      <input
+        name="emailid"
+        type="text"
+      />
+      <label>
+        Password
+      </label>
+      <input
+        name="password"
+        type="password"
+      />
+      <input
+        className="button"
+        type="submit"
+        value="Login"
+      />
+    </form>
+    <Link
+      className="pass-reset"
+      replace={false}
+      to="/resetpassword"
+    >
+      Forgot password?..
+    </Link>
+  </div>
+</div>
+`;

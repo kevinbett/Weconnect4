@@ -4,6 +4,6 @@ import { Divider } from "../../../node_modules/semantic-ui-react";
 
 describe('New password form',() => { 
     it ('renders new password form', () => { 
-        expect(shallow(<NewPasswordForm/>).find("div#main-registration-container").exists()).toBe(true);
-    })
+        expect(shallow(<NewPasswordForm/>)).toMatchSnapshot()
+    });
 } )
