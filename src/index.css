@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+.card-deck{
+  width: 18rem;
+  padding: 2%;
+
+}
+
+.card-deck2{
+  width: 50rem;
+  padding: 2%;
+
+}
+
+.card-text{
+  font-weight: 500;
+}
+
+.btn-space{
+  margin-right: 15px;
+}
+
+.nav-right{ 
+  float: right !important
+}
+.reg{
+  float: left;
+}

@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - stable
+
+script:
+  - npm test -- --coverage # Include coverage when running tests
+after_success:
+  - coveralls < coverage/lcov.info

@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search business page search business page renders 1`] = `
+<div>
+  <div
+    className="row container"
+  >
+    <div
+      className="col-md-4"
+    >
+      <form
+        class="form"
+      >
+        <div
+          class="input"
+        >
+          <div
+            class=""
+          >
+            <input
+              class="form-control"
+              id="inlineFormInputGroup"
+              onChange={[Function]}
+              placeholder="Search..."
+              type="text"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      className="col-md-4"
+    >
+      <form
+        class="form"
+      >
+        <div
+          class="input"
+        >
+          <div
+            class=""
+          >
+            <input
+              class="form-control"
+              id="inlineFormInputGroup"
+              onChange={[Function]}
+              placeholder="Location..."
+              type="text"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      className="col-md-4"
+    >
+      <form
+        class="form"
+      >
+        <div
+          class="input"
+        >
+          <div
+            class=""
+          >
+            <input
+              class="form-control"
+              id="inlineFormInputGroup"
+              onChange={[Function]}
+              placeholder="category..."
+              type="text"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <SearchResults
+      className="row"
+      results={Array []}
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login page renders populates the the login form 1`] = `
+<div>
+  <Navigation />
+  <div
+    id="main-registration-container"
+  >
+    <div
+      id="register"
+    >
+      <h3>
+        Edit Business
+      </h3>
+      <form
+        onSubmit={[Function]}
+      >
+        <p
+          className="errorMsg"
+        />
+        <label>
+          Name
+        </label>
+        <input
+          name="name"
+          onChange={[Function]}
+          type="text"
+          value="minenetoo"
+        />
+        <label>
+          Type:
+        </label>
+        <input
+          name="type"
+          onChange={[Function]}
+          type="text"
+          value="cuisine"
+        />
+        <label>
+          category
+        </label>
+        <input
+          name="category"
+          onChange={[Function]}
+          type="text"
+          value="fast food"
+        />
+        <label>
+          Location
+        </label>
+        <input
+          name="location"
+          onChange={[Function]}
+          type="text"
+          value="roysambu"
+        />
+        <input
+          className="button"
+          type="submit"
+          value="Edit Business"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+`;

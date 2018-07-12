@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register business page Register business page renders 1`] = `
+<div>
+  <Navigation />
+  <RegisterBusinessForm />
+</div>
+`;

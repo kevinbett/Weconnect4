@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Review Page Renders populates add review form 1`] = `
+<div>
+  <Navigation />
+  <div
+    id="main-registration-container"
+  >
+    <div
+      id="register"
+    >
+      <h3>
+        Enter your Review
+      </h3>
+      <form
+        onSubmit={[Function]}
+      >
+        <p
+          className="errorMsg"
+        />
+        <label>
+          Review
+        </label>
+        <input
+          name="feedback"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+        <input
+          className="button"
+          type="submit"
+          value="Submit Review"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+`;

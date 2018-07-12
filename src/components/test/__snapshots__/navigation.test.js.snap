@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation bar renders navigation bar components 1`] = `
+<div
+  className="navbar navbar-expand-lg navbar-light bg-light"
+>
+  <Link
+    className="navbar-brand"
+    replace={false}
+    to="/"
+  >
+    Home
+  </Link>
+  <button
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    className="navbar-toggler"
+    data-target="#navbarSupportedContent"
+    data-toggle="collapse"
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    className="collapse navbar-collapse"
+    id="navbarSupportedContent"
+  >
+    <ul
+      className="navbar-nav"
+    >
+      <li
+        className="nav-item"
+      >
+        <Link
+          className="nav-link"
+          replace={false}
+          to="/viewbusiness"
+        >
+          View Businesses
+        </Link>
+      </li>
+    </ul>
+    <div />
+  </div>
+</div>
+`;

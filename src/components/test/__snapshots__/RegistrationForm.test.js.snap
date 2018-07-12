@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register page renders populates register form 1`] = `
+<div
+  id="main-registration-container"
+>
+  <div
+    id="register"
+  >
+    <h3>
+      User Registration
+    </h3>
+    <form
+      onSubmit={[Function]}
+    >
+      <p
+        className="errorMsg"
+      />
+      <label>
+        Name
+      </label>
+      <input
+        name="username"
+        type="text"
+      />
+      <label>
+        Email ID:
+      </label>
+      <input
+        name="emailid"
+        type="text"
+      />
+      <label>
+        Password
+      </label>
+      <input
+        name="password"
+        type="password"
+      />
+      <input
+        className="button"
+        type="submit"
+        value="Register"
+      />
+    </form>
+  </div>
+</div>
+`;

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Review Page renders add review body 1`] = `
+<div>
+  <Navigation />
+  <AddReviewForm />
+</div>
+`;
