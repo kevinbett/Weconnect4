@@ -26,12 +26,6 @@ use npm or yarn
 
          
       $ npm install
-       
-   
-   using yarn
-   
-     
-      $ yarn install
   
 
 #### 2. Run the Application
@@ -41,21 +35,11 @@ use npm or yarn
        
         $ npm start
        
-   
-  using yarn
-   
-        
-        $ yarn start
     
 #### 3. Running the Tests
 
   using npm
 
        
-         $ npm test -- -u --coverage
+         $  npm test -- --coverage
        
-   
-  using yarn
-   
-        
-        $ yarn  test -- -u --coverage
