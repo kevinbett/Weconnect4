@@ -21,7 +21,6 @@ This is a front-end based that consumes an API made with Python/Flask.
 
 #### 1. Clone the Github Repositorty'
 
-use npm or yarn
   using npm
 
          
