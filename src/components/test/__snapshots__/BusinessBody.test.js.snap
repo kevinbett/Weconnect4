@@ -6,6 +6,12 @@ exports[`Business Body Business body renders 1`] = `
 >
   <div
     className="row"
-  />
+  >
+    <Paginate
+      business={Array []}
+      businessesPerPage={8}
+      handlePageClick={[Function]}
+    />
+  </div>
 </div>
 `;

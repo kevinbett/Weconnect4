@@ -31,3 +31,8 @@ body {
 .reg{
   float: left;
 }
+
+.center {
+  position: relative;
+  margin-left: 200px;
+}

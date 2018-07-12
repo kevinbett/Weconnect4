@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import Paginate from '../pagination'
 
 class RenderBusiness extends Component { 
+    handlePageClick = this.handlePageClick.bind(this)
     constructor(props) { 
         super(props);
 
         this.state = {
             businesses:[],
+            currentPage: 1,
+            businessesPerPage:8
         };
     }
 
@@ -51,13 +55,29 @@ class RenderBusiness extends Component {
             console.log(this.state)
         })
     }
-    render (){ 
+
+    handlePageClick(event) {
+        this.setState({
+            currentPage: Number(event.target.id)
+        });
+    }
+
+
+    render (){
         const data = this.state.businesses;
-        const listBiz=data.map(this.DisplayBusiness)
+        const indexOfLastBusiness = this.state.currentPage * this.state.businessesPerPage;
+        const indexOfFirstBusiness = indexOfLastBusiness - this.state.businessesPerPage;
+        const currentBusiness = data.slice(indexOfFirstBusiness, indexOfLastBusiness);
+        
+        const listBiz=currentBusiness.map(this.DisplayBusiness)
         return (
             <div className="container">
             <div className="row">
                 {listBiz}
+                <Paginate 
+                business = { data }
+                handlePageClick={ this.handlePageClick}
+                businessesPerPage = {this.state.businessesPerPage}/>
                 </div>
                 </div>
         )
